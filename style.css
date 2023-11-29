@@ -1,0 +1,418 @@
+* {
+  zoom: 95%;
+}
+
+/* Galaxy Background */
+.bg {
+  background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.bg:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+@keyframes sf-fly-by-1 {
+  from {
+    transform: translateZ(-600px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateZ(0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes sf-fly-by-2 {
+  from {
+    transform: translateZ(-1200px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateZ(-600px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes sf-fly-by-3 {
+  from {
+    transform: translateZ(-1800px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateZ(-1200px);
+    opacity: 0.5;
+  }
+}
+
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  z-index: -1;
+}
+
+.star-field .layer {
+  box-shadow: -411px -476px #cccccc, 777px -407px #d4d4d4, -387px -477px #fcfcfc,
+    -91px -235px #d4d4d4, 491px -460px #f7f7f7, 892px -128px #f7f7f7,
+    758px -277px #ededed, 596px 378px #cccccc, 647px 423px whitesmoke,
+    183px 389px #c7c7c7, 524px -237px #f0f0f0, 679px -535px #e3e3e3,
+    158px 399px #ededed, 157px 249px #ededed, 81px -450px #ebebeb,
+    719px -360px #c2c2c2, -499px 473px #e8e8e8, -158px -349px #d4d4d4,
+    870px -134px #cfcfcf, 446px 404px #c2c2c2, 440px 490px #d4d4d4,
+    414px 507px #e6e6e6, -12px 246px #fcfcfc, -384px 369px #e3e3e3,
+    641px -413px #fcfcfc, 822px 516px #dbdbdb, 449px 132px #c2c2c2,
+    727px 146px #f7f7f7, -315px -488px #e6e6e6, 952px -70px #e3e3e3,
+    -869px -29px #dbdbdb, 502px 80px #dedede, 764px 342px #e0e0e0,
+    -150px -380px #dbdbdb, 654px -426px #e3e3e3, -325px -263px #c2c2c2,
+    755px -447px #c7c7c7, 729px -177px #c2c2c2, -682px -391px #e6e6e6,
+    554px -176px #ededed, -85px -428px #d9d9d9, 714px 55px #e8e8e8,
+    359px -285px #cfcfcf, -362px -508px #dedede, 468px -265px #fcfcfc,
+    74px -500px #c7c7c7, -514px 383px #dbdbdb, 730px -92px #cfcfcf,
+    -112px 287px #c9c9c9, -853px 79px #d6d6d6, 828px 475px #d6d6d6,
+    -681px 13px #fafafa, -176px 209px #f0f0f0, 758px 457px #fafafa,
+    -383px -454px #ededed, 813px 179px #d1d1d1, 608px 98px whitesmoke,
+    -860px -65px #c4c4c4, -572px 272px #f7f7f7, 459px 533px #fcfcfc,
+    624px -481px #e6e6e6, 790px 477px #dedede, 731px -403px #ededed,
+    70px -534px #cccccc, -23px 510px #cfcfcf, -652px -237px whitesmoke,
+    -690px 367px #d1d1d1, 810px 536px #d1d1d1, 774px 293px #c9c9c9,
+    -362px 97px #c2c2c2, 563px 47px #dedede, 313px 475px #e0e0e0,
+    839px -491px #e3e3e3, -217px 377px #d4d4d4, -581px 239px #c2c2c2,
+    -857px 72px #cccccc, -23px 340px #dedede, -837px 246px white,
+    170px -502px #cfcfcf, 822px -443px #e0e0e0, 795px 497px #e0e0e0,
+    -814px -337px #cfcfcf, 206px -339px #f2f2f2, -779px 108px #e6e6e6,
+    808px 2px #d4d4d4, 665px 41px #d4d4d4, -564px 64px #cccccc,
+    -380px 74px #cfcfcf, -369px -60px #f7f7f7, 47px -495px #e3e3e3,
+    -383px 368px #f7f7f7, 419px 288px #d1d1d1, -598px -50px #c2c2c2,
+    -833px 187px #c4c4c4, 378px 325px whitesmoke, -703px 375px #d6d6d6,
+    392px 520px #d9d9d9, -492px -60px #c4c4c4, 759px 288px #ebebeb,
+    98px -412px #c4c4c4, -911px -277px #c9c9c9;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 4px;
+  width: 4px;
+  border-radius: 2px;
+}
+
+.star-field .layer:nth-child(1) {
+  animation: sf-fly-by-1 5s linear infinite;
+}
+
+.star-field .layer:nth-child(2) {
+  animation: sf-fly-by-2 5s linear infinite;
+}
+
+.star-field .layer:nth-child(3) {
+  animation: sf-fly-by-3 5s linear infinite;
+}
+
+:root {
+  --sun-color: linear-gradient(135deg, #fff57b, #fa8607);
+  --mercure-color: linear-gradient(135deg, #cecfd1, #60686b);
+  --venus-color: linear-gradient(135deg, #ffa973, #a8683f);
+  --terre-color: linear-gradient(135deg, #0059ff, lightgreen);
+  --mars-color: linear-gradient(135deg, #e95020, #ff7a44);
+  --jupiter-color: linear-gradient(135deg, #9f4523, #f7ad6f);
+  --saturne-color: linear-gradient(135deg, #fff4c4, #f7be6d);
+  --uranus-color: linear-gradient(135deg, #3dc5e3, #8ce7f5);
+  --neptune-color: linear-gradient(135deg, #458ff2, #003184);
+  --pluton-color: linear-gradient(135deg, #2a2e47, #9996ab);
+  --star-color: linear-gradient(135deg, #ffffff, #858585);
+  --planet-box-shadow: 0 0 50px 5px #ffffff;
+}
+
+/* Fin Galaxy Background */
+.sun {
+  width: 150px;
+  height: 150px;
+  background: var(--sun-color);
+  box-shadow: 0 0 100px 20px #fa8607;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planet {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+/* Mercure */
+.mercure {
+  width: 15px;
+  height: 15px;
+  background: var(--mercure-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitmercure 7s linear infinite;
+}
+
+@keyframes orbitmercure {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-100px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-100px);
+  }
+}
+
+/* Fin Mercure */
+
+/* Venus */
+.venus {
+  width: 20px;
+  height: 20px;
+  background: var(--venus-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitvenus 8.5s linear infinite;
+}
+
+@keyframes orbitvenus {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-155px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-155px);
+  }
+}
+
+/* Fin Venus */
+
+/* Terre */
+.terre {
+  width: 25px;
+  height: 25px;
+  background: var(--terre-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitterre 12s linear infinite;
+}
+
+@keyframes orbitterre {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-210px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-210px);
+  }
+}
+
+/* Fin Terre */
+
+/* Mars */
+.mars {
+  width: 17px;
+  height: 17px;
+  background: var(--mars-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitmars 14s linear infinite;
+}
+
+@keyframes orbitmars {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-265px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-265px);
+  }
+}
+
+/* Fin Mars */
+
+/* Star Mars 1 */
+.starmars1 {
+  width: 4px;
+  height: 4px;
+  background: var(--star-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitstarmars1 2s linear infinite;
+}
+
+@keyframes orbitstarmars1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-25px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-25px);
+  }
+}
+
+/* Fin Star Mars 1 */
+
+/* Star Mars 2 */
+.starmars2 {
+  width: 4px;
+  height: 4px;
+  background: var(--star-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitstarmars2 2.5s linear infinite;
+}
+
+@keyframes orbitstarmars2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-35px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-35px);
+  }
+}
+
+/* Fin Star Mars 2 */
+
+/* Jupiter */
+.jupiter {
+  width: 55px;
+  height: 55px;
+  background: var(--jupiter-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitjupiter 18s linear infinite;
+}
+
+@keyframes orbitjupiter {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-320px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-320px);
+  }
+}
+
+/* Fin Jupiter */
+
+/* Saturne */
+.saturne {
+  width: 50px;
+  height: 50px;
+  background: var(--saturne-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitsaturne 22s linear infinite;
+}
+
+@keyframes orbitsaturne {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-375px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-375px);
+  }
+}
+
+/* Fin Saturne */
+
+/* Star Saturne */
+.starsaturne {
+  width: 10px;
+  height: 10px;
+  background: var(--star-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitstarsaturne 3s linear infinite;
+}
+
+@keyframes orbitstarsaturne {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-45px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-45px);
+  }
+}
+
+/* Fin Star */
+
+/* Uranus */
+.uranus {
+  width: 35px;
+  height: 35px;
+  background: var(--uranus-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbituranus 29s linear infinite;
+}
+
+@keyframes orbituranus {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-430px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-430px);
+  }
+}
+
+/* Fin Uranus */
+
+/* Neptune */
+.neptune {
+  width: 30px;
+  height: 30px;
+  background: var(--neptune-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitneptune 15.5s linear infinite;
+}
+
+@keyframes orbitneptune {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-485px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-485px);
+  }
+}
+
+/* Fin Neptune */
+
+/* Pluton */
+.pluton {
+  width: 35px;
+  height: 35px;
+  background: var(--pluton-color);
+  box-shadow: var(--planet-box-shadow);
+  animation: orbitpluton 19s linear infinite;
+}
+
+@keyframes orbitpluton {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-520px);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn) translateY(-520px);
+  }
+}
+
+/* Fin Pluton */
